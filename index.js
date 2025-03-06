@@ -1,14 +1,14 @@
-require('dotenv').config();
+// index.js
+require('dotenv').config(); // Charger les variables d'environnement
 const express = require('express');
 const app = express();
+const riotRoutes = require('./routes/riotRoutes');
+
 const PORT = process.env.PORT || 5000;
 
-app.get('/health', (req, res) => {
-    res.json({ status: 'API is running' });
+// Utiliser les routes définies dans 'riotRoutes'
+app.use(riotRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
-const summonerRoutes = require('./routes/summoner');
-app.use('/summoner', summonerRoutes);
