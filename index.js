@@ -2,7 +2,7 @@
 require('dotenv').config(); // Charger les variables d'environnement
 const express = require('express');
 const app = express();
-const riotRoutes = require('./routes/riotRoutes');
+const riotRoutes = require('./routes/accountRoutes');
 
 const PORT = process.env.PORT || 5000;
 

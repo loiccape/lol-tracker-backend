@@ -1,7 +1,7 @@
 // routes/riotRoutes.js
 const express = require('express');
 const router = express.Router();
-const riotService = require('../services/riotService');
+const riotService = require('../services/accountService');
 
 router.get('/riot/account/:gameName/:tagLine', async (req, res) => {
   const { gameName, tagLine } = req.params;
